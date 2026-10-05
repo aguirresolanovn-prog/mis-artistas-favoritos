@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Práctica 6 - Mi Música y Artistas Favoritos</title>
+  <style>
+    body {
+      background-color: #0b132b;
+      color: #ffffff;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      background-color: #1c2541;
+      padding: 25px;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+      border: 2px solid #3a506b;
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 25px;
+      text-align: center;
+    }
+
+    .header h1 {
+      color: #ffcc00;
+      font-size: 26px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin: 0 15px;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+    }
+
+    .nav-bar {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 20px;
+      background-color: #0b132b;
+      padding: 10px;
+      border-radius: 10px;
+    }
+
+    .nav-bar img {
+      border-radius: 6px;
+      transition: transform 0.2s;
+    }
+
+    .nav-bar img:hover {
+      transform: scale(1.05);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 12px;
+    }
+
+    th {
+      background: linear-gradient(135deg, #ff4b2b, #ff416c);
+      color: white;
+      padding: 12px;
+      font-size: 18px;
+      border-radius: 8px;
+      text-transform: uppercase;
+    }
+
+    td {
+      background-color: #2a3d66;
+      border-radius: 10px;
+      padding: 12px;
+      vertical-align: middle;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+
+    .card-media {
+      background-color: #ffffff;
+      color: #1c2541;
+      text-align: center;
+      padding: 10px;
+      border-radius: 10px;
+      font-weight: bold;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .card-media:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+    }
+
+    .card-media img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 5px;
+      margin-bottom: 5px;
+    }
+
+    .artist-img {
+      border-radius: 10px;
+      object-fit: cover;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+    }
+
+    .artist-text {
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .artist-text b {
+      color: #6fffe9;
+      font-size: 16px;
+    }
+
+    .btn-video {
+      display: inline-block;
+      background-color: #ff0000;
+      color: white;
+      text-decoration: none;
+      padding: 8px 12px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: bold;
+      transition: background-color 0.2s, transform 0.2s;
+    }
+
+    .btn-video:hover {
+      background-color: #cc0000;
+      transform: scale(1.05);
+    }
+
+    .btn-curr {
+      background-color: #6fffe9;
+      color: #0b132b;
+      font-weight: bold;
+      border: none;
+      padding: 12px 25px;
+      border-radius: 25px;
+      cursor: pointer;
+      font-size: 14px;
+      transition: background-color 0.2s, transform 0.2s;
+      box-shadow: 0 4px 10px rgba(111, 255, 233, 0.3);
+    }
+
+    .btn-curr:hover {
+      background-color: #5bc0be;
+      transform: scale(1.05);
+    }
+
+    .footer-row {
+      text-align: right;
+      padding-top: 15px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+
+  <div class="header">
+    <img src="musica_anim.gif" width="70" height="100" alt="Música">
+    <h1>Mi Música, Cantantes y Artistas Favoritos</h1>
+    <div>
+      <img src="manos.jpg" width="75" height="75" alt="Manos" style="border-radius:50%; margin-right:5px;">
+      <img src="cantando.jpg" width="75" height="75" alt="Cantando" style="border-radius:50%;">
+    </div>
+  </div>
+
+  <div class="nav-bar">
+    <img src="musica1.jpg" width="80" height="35" alt="Música 1">
+    <img src="video1.jpg" width="80" height="35" alt="Video 1">
+    <img src="video2.jpg" width="80" height="35" alt="Video 2">
+    <img src="radio1.jpg" width="80" height="35" alt="Radio 1">
+    <img src="radio2.jpg" width="80" height="35" alt="Radio 2">
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th colspan="2">Cantantes Famosos</th>
+        <th style="background: #3a506b;">Reproductor</th>
+        <th>Noticias</th>
+        <th>Películas</th>
+      </tr>
+    </thead>
+    <tbody>
+
+      <tr>
+        <td align="center" width="150">
+          <img src="justin.jpg" width="130" height="180" class="artist-img" alt="Justin Bieber">
+        </td>
+        <td class="artist-text">
+          <b>Justin Bieber</b><br><br>
+          Cantante y compositor canadiense. Fue descubierto en 2008 tras ver sus videos en YouTube. Alcanzó un éxito comercial masivo con su sencillo "Baby" y álbumes como "My World 2.0", "Purpose" y "Justice". Ha ganado numerosos premios Grammy.
+        </td>
+        <td align="center" width="130">
+          <span style="color: #ffcc00; font-size: 11px; font-weight: bold;">MÚSICA</span><br><br>
+          <a href="https://youtu.be/xQOO2xGQ1Pc" target="_blank" class="btn-video">▶ Ver Lonely</a>
+        </td>
+        <td width="120">
+          <div class="card-media">
+            <img src="Universal.jpg" alt="Universal"><br>
+            Universal
+          </div>
+        </td>
+        <td width="120">
+          <div class="card-media">
+            <img src="cinemex.jpg" alt="Cinemex"><br>
+            Cinemex
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td align="center">
+          <img src="jeon.jpg" width="130" height="180" class="artist-img" alt="Jeon Jungkook">
+        </td>
+        <td class="artist-text">
+          <b>Jeon Jungkook</b><br><br>
+          Cantante, compositor y bailarín surcoreano, mundialmente conocido por ser el integrante más joven (maknae) y vocalista principal de BTS. En 2023 debutó como solista con su exitoso álbum "GOLDEN" y su tema récord "Seven".
+        </td>
+        <td align="center">
+          <span style="color: #ffcc00; font-size: 11px; font-weight: bold;">MÚSICA</span><br><br>
+          <a href="https://youtu.be/QU9c0053UAU" target="_blank" class="btn-video">▶ Ver Seven</a>
+        </td>
+        <td>
+          <div class="card-media">
+            <img src="Reforma.jpg" alt="Reforma"><br>
+            Reforma
+          </div>
+        </td>
+        <td>
+          <div class="card-media">
+            <img src="cinepolis.jpg" alt="Cinépolis"><br>
+            Cinépolis
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td align="center">
+          <img src="dualipa.jpg" width="130" height="180" class="artist-img" alt="Dua Lipa">
+        </td>
+        <td class="artist-text">
+          <b>Dua Lipa</b><br><br>
+          Cantante y compositora británica. Ha saltado a la fama con éxitos globales como "New Rules", "Levitating" y "Don't Start Now". Su disco "Future Nostalgia" la consolidó como una de las reinas del pop moderno.
+        </td>
+        <td align="center">
+          <span style="color: #ffcc00; font-size: 11px; font-weight: bold;">MÚSICA</span><br><br>
+          <a href="https://youtu.be/6q0JnftlH-I" target="_blank" class="btn-video">▶ Ver Training</a>
+        </td>
+        <td>
+          <div class="card-media">
+            <img src="Heraldo.jpg" alt="Heraldo"><br>
+            Heraldo
+          </div>
+        </td>
+        <td>
+          <div class="card-media">
+            <img src="cinemark.jpg" alt="Cinemark"><br>
+            Cinemark
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td align="center">
+          <img src="grupofirme.jpg" width="130" height="180" class="artist-img" alt="Grupo Firme">
+        </td>
+        <td class="artist-text">
+          <b>Grupo Firme</b><br><br>
+          Agrupación de música regional mexicana fundada en Tijuana, Baja California, liderada por Eduin Caz. Han logrado romper récords de asistencia en estadios y festivales con sus grandes temas.
+        </td>
+        <td align="center">
+          <span style="color: #ffcc00; font-size: 11px; font-weight: bold;">MÚSICA</span><br><br>
+          <a href="https://youtu.be/e8OJ3Gl5jjQ" target="_blank" class="btn-video">▶ Ver Canción</a>
+        </td>
+        <td>
+          <div class="card-media">
+            <img src="Excelsior.jpg" alt="Excélsior"><br>
+            Excélsior
+          </div>
+        </td>
+        <td>
+          <div class="card-media">
+            <img src="pelicula.jpg" alt="Película"><br>
+            Película
+          </div>
+        </td>
+      </tr>
+
+    </tbody>
+  </table>
+<div class="footer-row">
+    <a href="curriculum.html" style="text-decoration: none;">
+      <button class="btn-curr">↩ Regresar al currículum</button>
+    </a>
+  </div>
+</div>
+
+</body>
+</html>
